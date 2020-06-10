@@ -1,7 +1,7 @@
 import React from 'react'
 import Todos from './Todos'
 
-export default function TodoList({todos}) {
+export default function TodoList({todos,toogleComplete}) {
     return (
         <ul>
             {todos.map(todo=>(
