@@ -1,12 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
+import Typography from '@material-ui/core/Typography';
 
 function App() {
+  const[todos,setTodos] = useState([]);
+
+  function saveTodos(todoText) {
+    const trimmedText = todoText.trim();
+
+    if (trimmedText.length > 0){
+        setTodos([...todos, trimmedText]);
+    }
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Typography component="h1" variant="h2">
+        Todos
+      </Typography>
+      <TodoForm saveTodos={saveTodos}/>
+      <TodoList todos={todos}></TodoList>
     </div>
   );
 }
