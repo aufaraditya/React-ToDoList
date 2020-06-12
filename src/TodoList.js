@@ -12,7 +12,9 @@ export default function TodoList({todos, deleteTodos}) {
                     </All.ListItemIcon>
                     <All.ListItemText primary={todo}/>
                     <All.ListItemSecondaryAction>
-                        <All.IconButton aria-label="Delete" onClick={deleteTodos}>
+                        <All.IconButton aria-label="Delete" onClick={() => {
+                            deleteTodos(index);
+                        }}>
                             <DeleteIcon/>
                         </All.IconButton>
                     </All.ListItemSecondaryAction>

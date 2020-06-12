@@ -15,13 +15,20 @@ function App() {
     }
 }
 
+function deleteTodos(todoIndex){
+  const newTodos = todos.filter((_, index) => index !==todoIndex );
+  //Whatever todos don’t match the provided index are kept and stored in state using setTodos.
+  setTodos(newTodos);
+}
+
   return (
     <div className="App">
       <Typography component="h1" variant="h2">
         Todos
       </Typography>
       <TodoForm saveTodos={saveTodos}/>
-      <TodoList todos={todos}></TodoList>
+      <TodoList todos={todos}
+                deleteTodos={deleteTodos}></TodoList>
     </div>
   );
 }
