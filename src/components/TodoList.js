@@ -5,7 +5,7 @@ export default function TodoList({todos,toogleComplete}) {
     return (
         <ul>
             {todos.map(todo=>(
-                <Todos key={todo.id} todo={todo} />
+                <Todos todo={todo} toogleComplete={toogleComplete}/>
             ))}
         </ul>
     )
